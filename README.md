@@ -1,5 +1,9 @@
 # SpyNet - Stealth AI Assistant 🕵️
 
+[![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+
 A background desktop AI assistant that can be instantly shown or hidden using a toggle key, enabling discreet and fast access without interrupting workflow.
 
 ## Features
