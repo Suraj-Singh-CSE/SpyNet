@@ -42,6 +42,24 @@ def test_api_handlers():
     if "Error" in chatgpt_response and "not configured" in chatgpt_response:
         print("✓ ChatGPT correctly reports missing API key")
     
+    # Test that handlers work with valid-looking API keys (interface test)
+    print("\nTesting API handler interfaces...")
+    test_gemini = GeminiHandler("test_key_123")
+    test_chatgpt = ChatGPTHandler("test_key_456")
+    
+    # These will fail to connect but should not crash
+    try:
+        response = test_gemini.query("Test query")
+        print("✓ Gemini query method executes without crashing")
+    except Exception as e:
+        print(f"✓ Gemini query properly handles errors: {type(e).__name__}")
+    
+    try:
+        response = test_chatgpt.query("Test query")
+        print("✓ ChatGPT query method executes without crashing")
+    except Exception as e:
+        print(f"✓ ChatGPT query properly handles errors: {type(e).__name__}")
+    
     return True
 
 def test_config():

@@ -221,9 +221,10 @@ class SpyNetApp:
             # Toggle visibility when hotkey pressed
             self.root.after(0, self.toggle_visibility)
         
-        # Ctrl+Shift+S as toggle key
+        # Use configured toggle key
+        toggle_key_str = self.config.get('toggle_key', '<ctrl>+<shift>+s')
         hotkey = keyboard.HotKey(
-            keyboard.HotKey.parse('<ctrl>+<shift>+s'),
+            keyboard.HotKey.parse(toggle_key_str),
             on_activate
         )
         
